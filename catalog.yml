@@ -1,0 +1,33 @@
+PREDEF:
+
+CHAPS:
+        - 1_about.re
+
+        - 2_+_6lowpan.re
+        - 2_1_headercomp.re
+        - 2_2_packet_disasm.re
+        - 2_3_conclusion.re
+
+        - 3_+_contiki.re
+        - 3_1_build_hello_world.re
+        - 3_2_build_system.re
+        - blank.re
+
+        - 4_+_6lbr_setup.re
+
+        - 5_+_arduino_on_contiki.re
+        - 5_a_protothreads.re
+        - blank.re
+        - blank.re
+        - blank.re
+        - blank.re
+        - blank.re
+        - blank.re
+        - blank.re
+        - blank.re
+
+APPENDIX:
+        - z_rpi_connect_board.re
+
+POSTDEF:
+        - postscript.re
