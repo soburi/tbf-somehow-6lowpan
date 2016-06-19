@@ -39,7 +39,7 @@ Border Routerのパッケージである。
 
 
 
-本章では、6LBRを使って、6LoWPANとIPネットワークの相互接続の実験を行う。
+本章では、RaspberryPiと6LBRを使って、6LoWPANとIPネットワークの相互接続の実験を行う。
 
 
 == ルーター接続
@@ -182,17 +182,9 @@ Eth default router : bbbb::1
 
 
 
-@<tt>{/etc/6lbr/6lbr.conf} に、
-
-
-//emlist{
-BRIDGE=1
-//}
-
-
-のようにブリッジ有効の設定があると、仮想ブリッジを作るので、
-br0がv6アドレスの設定の対象である。ipコマンドでnvm.datに設定されている
-v6アドレスを設定する。
+@<tt>{/etc/6lbr/6lbr.conf} に @<tt>{BRIDGE=1} のブリッジ有効の設定があると、
+仮想ブリッジを作るので、br0がv6アドレスの設定の対象である。
+ipコマンドでnvm.datに設定されているv6アドレスを設定する。
 
 
 //emlist{
