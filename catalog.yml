@@ -11,19 +11,13 @@ CHAPS:
         - 3_+_contiki.re
         - 3_1_build_hello_world.re
         - 3_2_build_system.re
-        - blank.re
 
         - 4_+_6lbr_setup.re
 
         - 5_+_arduino_on_contiki.re
-        - 5_a_protothreads.re
-        - blank.re
-        - blank.re
-        - blank.re
-        - blank.re
-        - blank.re
-        - blank.re
-        - blank.re
+        - 5_a_6lowpan_api.re
+        - 5_b_implementation.re
+        - 5_c_build.re
         - blank.re
 
 APPENDIX:

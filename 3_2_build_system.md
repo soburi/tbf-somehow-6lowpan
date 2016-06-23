@@ -45,10 +45,13 @@ include $(CONTIKI)/Makefile
 この場合、`$(CONTIKI_PROJECT)/$(CONTIKI_PROJECT).c` の1ファイルのみがコンパイル対象となる。
 
 プロジェクトのオプションとして、
-`PROJECT_SOURCEFILES`と`PROJECTDIRS`が指定できる。
 
-`PROJECT_SOURCEFILES`は追加のソースファイル、
-`PROJECTDIRS`は追加のインクルードディレクトリを指定する。
+: PROJECT\_SOURCEFILES
+  追加のソースファイルを指定
+: PROJECTDIRS
+  追加のインクルードディレクトリを指定
+
+が設定可能である。
 
 Makefileは特にアーキテクチャ依存がなければ、全アーキテクチャ共用となる。
 ビルド時にmakeコマンド実行時に引数で、変数 `TARGET` にビルド対象のボードを指定することで、
@@ -90,10 +93,26 @@ IPv6の場合はさらに
 
 ターゲットボードのMakefileの中からさらに、
 搭載されているCPUに対応するMakefileを
-`$(CONTIKI)/cpu`配下から読み込む。
+`$(CONTIKI)/cpu`配下から読み込んでいる。
 
 
+JN516xの場合もプラットフォーム固有の設定がある。
+
+: CHIP
+  JN516xシリーズのうちのどれかを指定する。TWE-Liteの場合はJN5164
+
+: JENNIC\_PCB, JENNIC\_STACK , JENNIC\_MAC
+  NXPのSDKのMakefileに由来するパラメータ。触らなくてよい。
+  
+: DISABLE\_LTO
+  Link Time Optimizationの有効無効の切り替え。これもNXPのSDKのMakefileに由来
+: DEBUG
 
 
+: TARGET\_WITH\_UART0, TARGET\_WITH\_UART1
+  それぞれUART0,1を使う場合は1に。
 
-
+: JN516x\_WITH\_DR1174, JN516x\_WITH\_DR1175, JN516x\_WITH\_DR1199
+   NXPの販売している評価ボードの名前。原則使うことはないが、
+   ボタンの設定が必要なサンプルがあるので、そういった場合に、
+   `JN516x\_WITH\_DR1174` を指定する
