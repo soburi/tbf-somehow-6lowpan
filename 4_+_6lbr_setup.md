@@ -68,16 +68,15 @@ slip-radioは802.15.4の通信をほぼそのままSLIP(Serial Line IP)に回送
 6LBRのインストール
 ------------
 
-https://github.com/cetic/6lbr/wiki
+6LBRのGitHubリポジトリは [https://github.com/cetic/6lbr](https://github.com/cetic/6lbr)
+にある。
 
 6LBRのソースはContikiのフォークとなっている。
 本体は、`examples/6lbr` にある cetic-6lbr であるが、
 6LoWPANのプロトコルスタックにも手が加えられている。
 
 Contikiのビルドの仕組みに乗っかっているので、
-インストール手順
-
-https://github.com/cetic/6lbr/wiki/Other-Linux-Software-Configuration
+[6LBRのインストール手順 https://github.com/cetic/6lbr/wiki/Other-Linux-Software-Configuration](https://github.com/cetic/6lbr/wiki/Other-Linux-Software-Configuration)
 
 に従ってLinux上で普通にmakeを実行すればよい。
 

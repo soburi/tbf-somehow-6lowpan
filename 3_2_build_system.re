@@ -27,6 +27,11 @@ ContikiOSのソースはかなり@<b>{散らかっている}。
   ホストPC側で使うツール類。SLIP接続のツールなどが入っている
 
 
+
+contikiを使ってアプリ開発をする場合は@<tt>{examples}、contikiへのアーキテクチャ移植は
+@<tt>{platform}, @<tt>{cpu}、contikiのOS部分、ネットワークを触るには@<tt>{core}あたりを見て行けばよい。
+
+
 == Makefileの構造
  * @<tt>{$(CONTIKI_PROJECT)/Makefile}
 
@@ -121,26 +126,15 @@ JN516xの場合もプラットフォーム固有の設定がある。
 
 
 : CHIP
-  JN516xシリーズのうちのどれかを指定する。TWE-Liteの場合はJN5164
-
-
-
+  JN516xシリーズのうちのどれかを指定する。TWE-Liteの場合はJN5164を指定する
+: TARGET_WITH_UART0, TARGET_WITH_UART1
+  それぞれUART0,1を使う場合は1に。
 : JENNIC_PCB, JENNIC_STACK , JENNIC_MAC
   NXPのSDKのMakefileに由来するパラメータ。触らなくてよい。
-
-
-
 : DISABLE_LTO
   Link Time Optimizationの有効無効の切り替え。これもNXPのSDKのMakefileに由来
 : DEBUG
-
-
-
-: TARGET_WITH_UART0, TARGET_WITH_UART1
-  それぞれUART0,1を使う場合は1に。
-
-
-
+  SWを指定するとUARTにデバッグメッセージを出す。HWはJTAGらしいが... これもNXPのSDKのMakefileに由来
 : JN516x_WITH_DR1174, JN516x_WITH_DR1175, JN516x_WITH_DR1199
    NXPの販売している評価ボードの名前。原則使うことはないが、
    ボタンの設定が必要なサンプルがあるので、そういった場合に、

@@ -160,18 +160,21 @@ CPUを握って回り続けるのは
 ![delay シーケンス](delay_sequence.svg "sche")
 
 1. ContikiのProtothreadの立ち上げ。`main()`関数で `process_run()` を呼ぶ無限ループを動かしている。システム側なのでユーザーは触らない処理である。
-2. Contiki側のmain_threadから、コルーチンとしてarduino_threadを立ち上げる。実行権はarduino_threadに移る。
+2. Contiki側の`main_thread`から、コルーチンとして`arduino_thread`を立ち上げる。実行権は`arduino_thread`に移る。
 3. `arduino_thread`は、arduinoのスケッチを実行する。`delay()`のような非同期処理が必要なAPI(contikiのプロセス間通信に依存する 機能)を実行するときに、実行権を開放し、`main_thread`に実行コンテクストを移す。
 4. `main_thread`は、`arduino_thread`が要求する、contiki側の処理を実行する。`delay()` であれば、contikiのタイマーAPIである、`etimer_expired()`を呼び出す
 6. contiki側の応答があったら、その処理結果を格納して、`arduino_thread`に再び実行権を移す
 7. 基本動作として、`loop()`が終わったら、一旦`main_thread`に実行権を戻す。 これをやらないと、contiki側の処理が動かなくなる。
 8. `main_thread`は「即時復帰」のイベントを要求し、一旦OS側に制御を移す
-9, contikiは即時にmain_threadに実行権を渡す
-10. 再び、arduino_threadに実行コンテクストを移して、スケッチの実行 を再開する。`loop()`を呼び終えたところで止まってるので、 復帰とともに、次の`loop()`の呼び出しの処理が行われる。
+9, contikiは即時に`main_thread`に実行権を渡す
+10. 再び、`arduino_thread`に実行コンテクストを移して、スケッチの実行 を再開する。`loop()`を呼び終えたところで止まってるので、 復帰とともに、次の`loop()`の呼び出しの処理が行われる。
 
 `arduino_thread`と`main_thread`の間で行われる、処理の委譲は
 共有変数を介して、関数ポインタと変数のやりとりをしている。
 この2つの処理が同時に動くことはないので、競合などは発生しない。
+
+arduinoのスケッチから見ると、APIの挙動が変わっていないので、
+システムの挙動として目に見える変更はない。
 
 contikiから見ると、`arduino_thread`の処理は、`main_thread`を介して
 「多少戻りの遅い、一つのProtothread」として見える。
@@ -179,3 +182,7 @@ contikiから見ると、`arduino_thread`の処理は、`main_thread`を介し�
 それが破壊されることもある。
 たとえば、`loop()`の中で無限ループを行って`loop()`を抜けないような
 スケッチはcontiki側に制御が全く移らなくなるので、動作できない。
+
+そのような制約はあるにしても、スケジューラのディスパッチによらない
+本実装は、arduinoの自然な拡張として、contikiを利用した非同期実装は
+十分有用と考える。

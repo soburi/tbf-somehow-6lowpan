@@ -18,6 +18,15 @@ Intikiは、Contikiのシステム上で動作するArduino APIの互換実装�
 現状では開発中であるため、完成度はまだまだ、ということを了承いただきたい。
 
 
+
+配布はGitHub
+@<href>{https://github.com/soburi/JN516x-arduino-package,https://github.com/soburi/JN516x-arduino-package}
+
+
+
+より行っており、現状、このリポジトリの@<tt>{arduino-on-contiki}のブランチで開発を進めている。
+
+
 == Intikiのインストール
 
 

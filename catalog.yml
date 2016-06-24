@@ -5,7 +5,6 @@ CHAPS:
 
         - 2_+_6lowpan.re
         - 2_1_headercomp.re
-        - 2_2_packet_disasm.re
         - 2_3_conclusion.re
 
         - 3_+_contiki.re

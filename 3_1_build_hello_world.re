@@ -15,9 +15,9 @@ TWE-Lite向けに@<b>{JN516xのビルド環境}をセットアップする。
 NXPのサイトからJN516x向けの開発環境、SDKなどをダウンロードしてインストールする。
 ここではインストール先はデフォルトのままとする。
 
- * @<href>{http://cache.nxp.com/documents/other/JN-SW-4141.zip,BeyondStudio for NXP}
- * @<href>{http://cache.nxp.com/documents/other/JN-SW-4163.zip,JN516x IEEE 802.15.4 SDK}
- * @<href>{http://cache.nxp.com/documents/other/JN-SW-4107.zip,JN51xx Producton Flash Programmer}
+ * @<href>{http://cache.nxp.com/documents/other/JN-SW-4141.zip,BeyondStudio for NXP http://cache.nxp.com/documents/other/JN-SW-4141.zip}
+ * @<href>{http://cache.nxp.com/documents/other/JN-SW-4163.zip,JN516x IEEE 802.15.4 SDK http://cache.nxp.com/documents/other/JN-SW-4163.zip}
+ * @<href>{http://cache.nxp.com/documents/other/JN-SW-4107.zip,JN51xx Producton Flash Programmer http://cache.nxp.com/documents/other/JN-SW-4107.zip}
 
 
 コマンドプロンプトでパスを設定する。
@@ -60,7 +60,8 @@ make TARGET=jn516x CHIP=JN5164
 
 
 //emlist{
-C:\NXP\ProductionFlashProgrammer\JN51xxProgrammer.exe -I 38400 -P 1000000 -V10 -s COM4 -f hello-world.jn516x.bin
+C:\NXP\ProductionFlashProgrammer\JN51xxProgrammer.exe \
+  -I 38400 -P 1000000 -V10 -s COM4 -f hello-world.jn516x.bin
 //}
 
 
@@ -70,7 +71,9 @@ COM4の部分は環境に合わせる。
 === 動作確認
 
 
-シリアルポートにつないで、
+TeraTermなどの端末エミュレータでUARTとTWE-Liteを接続する。
+baudrateはデフォルトで1000000となっていることに注意。
+TWE-Liteをリセットして
 
 
 //emlist{

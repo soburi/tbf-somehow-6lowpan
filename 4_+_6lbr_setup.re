@@ -85,7 +85,8 @@ Ethernet   or WiFi	.	UART	802.15.4 PHY
 == 6LBRのインストール
 
 
-https://github.com/cetic/6lbr/wiki
+6LBRのGitHubリポジトリは @<href>{https://github.com/cetic/6lbr,https://github.com/cetic/6lbr}
+にある。
 
 
 
@@ -96,11 +97,7 @@ https://github.com/cetic/6lbr/wiki
 
 
 Contikiのビルドの仕組みに乗っかっているので、
-インストール手順
-
-
-
-https://github.com/cetic/6lbr/wiki/Other-Linux-Software-Configuration
+@<href>{https://github.com/cetic/6lbr/wiki/Other-Linux-Software-Configuration,6LBRのインストール手順 https://github.com/cetic/6lbr/wiki/Other-Linux-Software-Configuration}
 
 
 
