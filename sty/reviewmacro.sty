@@ -11,9 +11,18 @@
 \fancypagestyle{plainhead}{%
 \fancyhead{}
 \fancyfoot{} % clear all header and footer fields
-\fancyfoot[CE,CO]{\thepage}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}}
+
+\fancyfoot[CE,CO]{\thepage}
+
+%\newcounter{tmppage}
+%\newcommand{\decrpage} { 
+%  \setcounter{tmppage}{\value{page}}
+%  \addtocounter{tmppage}{-1}
+%  \arabic{tmppage}
+%}
+%\fancyfoot[CE,CO]{\decrpage}
 
 %% using Helvetica as sans-serif
 \renewcommand{\sfdefault}{phv}

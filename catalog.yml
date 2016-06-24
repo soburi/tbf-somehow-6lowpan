@@ -1,6 +1,7 @@
 PREDEF:
 
 CHAPS:
+        - white.re
         - 1_about.re
 
         - 2_+_6lowpan.re
