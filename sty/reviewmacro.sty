@@ -16,13 +16,13 @@
 
 \fancyfoot[CE,CO]{\thepage}
 
-%\newcounter{tmppage}
-%\newcommand{\decrpage} { 
-%  \setcounter{tmppage}{\value{page}}
-%  \addtocounter{tmppage}{-1}
-%  \arabic{tmppage}
-%}
-%\fancyfoot[CE,CO]{\decrpage}
+\newcounter{tmppage}
+\newcommand{\decrpage} { 
+  \setcounter{tmppage}{\value{page}}
+  \addtocounter{tmppage}{-1}
+  \arabic{tmppage}
+}
+\fancyfoot[CE,CO]{\decrpage}
 
 %% using Helvetica as sans-serif
 \renewcommand{\sfdefault}{phv}

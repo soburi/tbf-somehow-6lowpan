@@ -33,5 +33,5 @@ Contikiやら6LoWPANを取り上げてみました。
 
 
 
-国際ソブリ協会 crs @<href>{soburi@gmail.com}
+国際ソブリ協会 crs <soburi@gmail.com>
 

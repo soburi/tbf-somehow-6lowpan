@@ -20,4 +20,4 @@ Contikiやら6LoWPANを取り上げてみました。
 
 [本稿の原稿 https://github.com/soburi/tbf-somehow-6lowpan](https://github.com/soburi/tbf-somehow-6lowpan)
 
-国際ソブリ協会 crs <soburi@gmail.com>
+国際ソブリ協会 crs \<soburi@gmail.com\>
