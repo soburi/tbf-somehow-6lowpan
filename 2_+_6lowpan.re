@@ -12,13 +12,6 @@
 自作IoT遊びを使うことも可能だ。
 
 
-== IPv6
-
-
-http://[aaaa::21b:c501:2102:23cb]
-http://[fe80::21b:c501:2102:23cb]
-
-
 == IEEE802.15.4 と 6LoWPAN
 
 
@@ -71,9 +64,10 @@ IEEE802.15.4のデータ構造に合わせてサイズが規定されている�
 
 
 
-@<href>{http://www.silex.jp/blog/wireless/2016/01/6lowpan.html,6LoWPAN のはなし}
+@<href>{http://www.silex.jp/blog/wireless/2016/01/6lowpan.html,6LoWPAN のはなし http://www.silex.jp/blog/wireless/2016/01/6lowpan.html}
 
 
 
-正直これ以上書くことない。
+正直なところ、本稿の内容はこの記事のあまり出来の良くないサマリのレベルである。
+詳細を当たりたい場合は、上記ページおよび原典となるRFCを参照いただきたい。
 

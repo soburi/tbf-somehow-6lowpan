@@ -18,7 +18,6 @@ CHAPS:
         - 5_a_6lowpan_api.re
         - 5_b_implementation.re
         - 5_c_build.re
-        - blank.re
 
 APPENDIX:
         - z_rpi_connect_board.re
